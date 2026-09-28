@@ -141,7 +141,7 @@ Each task directory stores checkpoints, adapter weights, and `router/router_task
 If you use this code, please cite the paper: [CE$^4$L](https://openreview.net/forum?id=Shb4ltB3J2).
 
 ```bibtex
-@inproceedings{yan2026cel,
+@inproceedings{yan2026ce4l,
   title={{CE}\${\textasciicircum}4\$L: Continual Ego, Exo, and Ego-Exo Learning},
   author={Hongwei Yan and Kanglei Zhou and Yuchen Liu and Qingyu Shi and Yi Zhong and Liyuan Wang},
   booktitle=ICML,
