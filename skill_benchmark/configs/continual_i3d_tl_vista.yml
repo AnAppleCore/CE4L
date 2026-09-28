@@ -1,0 +1,41 @@
+# VISTA: whitened-subspace router. Default top-k is vista_topL: 2. Replace <DATA_ROOT> before running.
+output_root: skill_benchmark/exps/continual_vista/i3d_tl
+
+# continual settings (same as TL)
+epochs_per_task: 2000
+seed: 0
+randomize_order: true
+num_tasks: null
+
+# data paths (same as TL)
+root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_ego_i3d
+exo_root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_exo_i3d
+train_list: skill_benchmark/annotations/skill_train.txt
+val_list: skill_benchmark/annotations/skill_val.txt
+
+# runtime knobs (same as TL)
+batch_size: 128
+workers: 4
+lr: 0.0001
+num_samples: 10
+
+# TL: ego pairs + exo reference, triplet loss enabled
+use_exo: true
+triplet_loss: true
+relation_network: false
+
+# ------------------------------
+# VISTA (task-id unknown at inference)
+# whitened-subspace router: task-wise (mu, diag-var) + whitened PCA subspace + residual-ratio routing (top-L)
+# ------------------------------
+vista_enabled: true
+vista_router_M: 1
+vista_subspace_k: 32
+vista_topL: 2
+vista_gamma: 10.0
+vista_eps: 1.0e-6
+vista_adapter_bottleneck: 64
+vista_train_raan_after_task1: false
+vista_save_router_stats: true
+
+

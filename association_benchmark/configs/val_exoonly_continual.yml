@@ -1,0 +1,17 @@
+_base_: './continual_default.yml'
+
+data:
+  dataset: ourdata_exo
+  clip_length: 4
+
+test:
+  testonly: true
+  ourdata:
+    metadata: ${data.metapath}association_val_hard.json
+
+resume: null
+output: ./exps/val_exoonly_continual/
+
+continual:
+  checkpoint_dir: ./exps/train_exoonly_continual/
+

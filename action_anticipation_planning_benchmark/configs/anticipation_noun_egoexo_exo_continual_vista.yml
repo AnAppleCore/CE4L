@@ -1,0 +1,14 @@
+# VISTA: whitened-subspace router. Default top-k is vista_topL: 2.
+# Change vista_topL if you want a different top-k. Paths below are relative to the
+# repository root unless they start with <DATA_ROOT> (replace that placeholder).
+_base_: ./anticipation_noun_egoexo_exo_continual.yml
+output_root: action_anticipation_planning_benchmark/exps/continual_vista/anticipation_noun_egoexo_exo
+vista_enabled: true
+vista_router_M: 1
+vista_subspace_k: 32
+vista_topL: 2
+vista_gamma: 10.0
+vista_eps: 1.0e-6
+vista_adapter_bottleneck: 64
+vista_apply_to_target: 1
+vista_router_fit_max_samples: 0

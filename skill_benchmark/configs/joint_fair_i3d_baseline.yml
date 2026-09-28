@@ -1,0 +1,25 @@
+output_root: skill_benchmark/exps/joint_fair/i3d_baseline/seed0
+
+# joint_fair settings
+# Training budget MUST match continual: epochs == epochs_per_task (do NOT multiply by num_tasks)
+epochs: 2000
+seed: 0
+randomize_order: true
+
+# data paths (match continual + standard scripts)
+root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_ego_i3d
+train_list: skill_benchmark/annotations/skill_train.txt
+val_list: skill_benchmark/annotations/skill_val.txt
+
+# runtime knobs (match standard / continual defaults)
+batch_size: 128
+workers: 4
+lr: 0.0001
+num_samples: 10
+
+# baseline: ego pairs only (no exo reference)
+use_exo: false
+triplet_loss: false
+relation_network: false
+
+

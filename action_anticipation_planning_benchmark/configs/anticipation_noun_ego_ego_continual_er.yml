@@ -1,0 +1,65 @@
+output_root: action_anticipation_planning_benchmark/exps/continual_er/anticipation_noun_ego_ego
+video_to_task_path: <DATA_ROOT>/video_to_task.npy
+
+class_file: <DATA_ROOT>/output/ego/ta3n
+modality: RGB
+train_source_list: action_anticipation_planning_benchmark/anticipation_annotation/noun/list_ego_train_ego_exo-feature.txt
+train_target_list: action_anticipation_planning_benchmark/anticipation_annotation/noun/list_ego_train_ego_exo-feature.txt
+val_list: action_anticipation_planning_benchmark/anticipation_annotation/noun/list_ego_val_ego_exo-feature.txt
+
+feat_path: <DATA_ROOT>/EgoExoLearn/clip_features_5fps/
+
+num_tasks: 8
+epochs_per_task: 40
+seed: 42
+max_train_samples_per_task: null
+max_val_samples: null
+
+num_classes: 31
+baseline_type: video
+frame_aggregation: trn-m
+num_segments: 5
+val_segments: 5
+add_fc: 1
+fc_dim: 512
+arch: resnet101
+pretrained: none
+use_target: none
+
+
+dropout_i: 0.5
+dropout_v: 0.5
+epochs: 40
+lr: 0.003
+optimizer: SGD
+lr_decay: 10.0
+lr_adaptive: dann
+lr_steps: [15.0, 30.0]
+clip_gradient: 20.0
+batch_size: [128, 128, 128]
+workers: 4
+eval_freq: 1
+print_freq: 50
+show_freq: 50
+copy_list: [N, N]
+dis_DA: none
+adv_DA: none
+use_bn: none
+add_loss_DA: none
+ens_DA: none
+alpha: 0
+beta: [0, 0, 0]
+gamma: 0
+mu: 0
+use_attn: none
+use_attn_frame: none
+n_attn: 1
+place_dis: [N, Y, N]
+place_adv: [N, Y, Y]
+save_model: true
+save_best_log: best.log
+
+continual_algorithm: er
+continual_algorithm_buffer_ratio: 0.2
+continual_algorithm_replay_batch_ratio: 0.2
+

@@ -1,0 +1,8 @@
+_base_: './val_egoonly_continual.yml'
+output: ./exps/continual_derpp/val_egoonly/
+continual:
+  checkpoint_dir: ./exps/continual_derpp/train_egoonly/
+continual_algorithm: derpp
+continual_algorithm_buffer_ratio: 0.2
+continual_algorithm_replay_batch_ratio: 0.2
+continual_algorithm_distill_alpha: 0.5

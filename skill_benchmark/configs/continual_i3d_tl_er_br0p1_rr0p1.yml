@@ -1,0 +1,32 @@
+output_root: skill_benchmark/exps/continual_er_br0p1_rr0p1/i3d_tl
+
+# continual settings
+# Match standard RAAN + Triplet Loss training hyperparams (see scripts/run_raan_tl.sh + opts.py defaults)
+epochs_per_task: 2000
+seed: 0
+randomize_order: true
+num_tasks: null
+
+# data paths (from scripts/run_raan_tl.sh)
+root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_ego_i3d
+exo_root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_exo_i3d
+train_list: skill_benchmark/annotations/skill_train.txt
+val_list: skill_benchmark/annotations/skill_val.txt
+
+# runtime knobs (match standard)
+batch_size: 128
+workers: 4
+lr: 0.0001
+num_samples: 10
+
+# TL: ego pairs + exo reference via triplet loss
+use_exo: true
+triplet_loss: true
+relation_network: false
+
+
+
+continual_algorithm: er
+continual_algorithm_buffer_ratio: 0.1
+continual_algorithm_replay_batch_ratio: 0.1
+

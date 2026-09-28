@@ -1,0 +1,35 @@
+output_root: skill_benchmark/exps/continual_l2p/i3d_baseline
+
+# continual settings (same as baseline)
+epochs_per_task: 2000
+seed: 0
+randomize_order: true
+num_tasks: null
+
+# data paths (same as baseline)
+root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_ego_i3d
+train_list: skill_benchmark/annotations/skill_train.txt
+val_list: skill_benchmark/annotations/skill_val.txt
+
+# runtime knobs
+batch_size: 128
+workers: 4
+lr: 0.0001
+
+# baseline input setting
+use_exo: false
+triplet_loss: false
+relation_network: false
+
+# ------------------------------
+# L2P (fixed adapter pool + key-query selection)
+# ------------------------------
+l2p_enabled: true
+l2p_pool_size: 4
+l2p_topK: 2
+l2p_router_M: 1
+l2p_adapter_bottleneck: 64
+l2p_sim_lambda: 0.5
+l2p_diversed_selection: true
+l2p_batchwise_selection: false
+

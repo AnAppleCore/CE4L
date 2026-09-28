@@ -1,0 +1,11 @@
+_base_: './test_egoonly_continual.yml'
+
+# Strictly match continual test/eval config (metadata, etc).
+# Only override resume/output to point to the joint_fair training output.
+resume: ./exps/joint_fair/train_egoonly_seed0/
+output: ./exps/joint_fair/test_egoonly_seed0/
+
+continual:
+  checkpoint_dir: ./exps/joint_fair/train_egoonly_seed0/
+
+

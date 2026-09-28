@@ -1,0 +1,7 @@
+_base_: './val_exoonly_continual.yml'
+output: ./exps/continual_er_br0p1_rr0p1/val_exoonly/
+continual:
+  checkpoint_dir: ./exps/continual_er_br0p1_rr0p1/train_exoonly/
+continual_algorithm: er
+continual_algorithm_buffer_ratio: 0.1
+continual_algorithm_replay_batch_ratio: 0.1

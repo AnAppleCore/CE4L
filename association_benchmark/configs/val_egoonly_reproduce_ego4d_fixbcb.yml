@@ -1,0 +1,17 @@
+_base_: './reproduce_default_fixbcb.yml'
+data:
+  dataset: ourdata_ego
+  clip_length: 4
+
+model:
+  name: CLIP_OPENAI_TIMESFORMER_BASE
+  pretrained_visual_checkpoint: null
+  project_embed_dim: 256
+
+test:
+  testonly: true
+  ourdata:
+    metadata: ${data.metapath}association_val_hard.json
+
+resume: ./exps/train_egoonly_reproduce_ego4d_fixbcb/checkpoint_best.pt
+output: ./exps/val_egoonly_reproduce_ego4d_fixbcb/

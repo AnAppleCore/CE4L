@@ -1,0 +1,13 @@
+# VISTA: whitened-subspace router. Default top-k is vista_topL: 2. Replace <DATA_ROOT> before running.
+_base_: './test_egoonly_continual.yml'
+output: ./exps/continual_vista/test_egoonly/
+continual:
+  checkpoint_dir: ./exps/continual_vista/train_egoonly/
+vista_enabled: true
+vista_router_M: 1
+vista_subspace_k: 32
+vista_topL: 2
+vista_gamma: 10.0
+vista_eps: 1e-06
+vista_adapter_bottleneck: 64
+vista_apply_to_target: true

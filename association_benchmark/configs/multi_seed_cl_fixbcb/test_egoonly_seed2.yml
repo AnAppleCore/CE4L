@@ -1,0 +1,17 @@
+_base_: '../continual_default_fixbcb.yml'
+
+data:
+  dataset: ourdata_ego
+  clip_length: 4
+
+test:
+  testonly: true
+  ourdata:
+    metadata: ${data.metapath}association_test_hard.json
+
+resume: null
+output: ./exps/multi_seed_cl_fixbcb/test_egoonly_seed2/
+
+continual:
+  checkpoint_dir: ./exps/multi_seed_cl_fixbcb/train_egoonly_seed2/
+

@@ -1,0 +1,5 @@
+_base_: './train_egoonly_continual.yml'
+output: ./exps/continual_er_br0p1_rr0p1/train_egoonly/
+continual_algorithm: er
+continual_algorithm_buffer_ratio: 0.1
+continual_algorithm_replay_batch_ratio: 0.1

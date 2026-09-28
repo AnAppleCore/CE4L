@@ -1,0 +1,17 @@
+_base_: '../continual_default.yml'
+
+data:
+  dataset: ourdata_egoexo
+  clip_length: 4
+
+test:
+  testonly: true
+  ourdata:
+    metadata: ${data.metapath}association_val_hard.json
+
+resume: null
+output: ./exps/multi_seed_cl/val_egoexo_seed2/
+
+continual:
+  checkpoint_dir: ./exps/multi_seed_cl/train_egoexo_seed2/
+

@@ -1,0 +1,30 @@
+output_root: skill_benchmark/exps/continual_er_br0p1_rr0p1/i3d_baseline
+
+# continual settings
+# Match standard RAAN baseline training hyperparams (see scripts/run_raan_baseline.sh + opts.py defaults)
+epochs_per_task: 2000
+seed: 0
+randomize_order: true
+num_tasks: null
+
+# data paths (from scripts/run_raan_baseline.sh)
+root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_ego_i3d
+train_list: skill_benchmark/annotations/skill_train.txt
+val_list: skill_benchmark/annotations/skill_val.txt
+
+# runtime knobs (match standard)
+batch_size: 128
+workers: 4
+lr: 0.0001
+
+# baseline: ego pairs only (no exo reference)
+use_exo: false
+triplet_loss: false
+relation_network: false
+
+
+
+continual_algorithm: er
+continual_algorithm_buffer_ratio: 0.1
+continual_algorithm_replay_batch_ratio: 0.1
+

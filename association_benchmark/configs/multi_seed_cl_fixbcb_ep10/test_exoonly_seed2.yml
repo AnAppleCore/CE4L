@@ -1,0 +1,18 @@
+_base_: '../continual_default_fixbcb_ep10.yml'
+
+data:
+  dataset: ourdata_exo
+  clip_length: 4
+
+test:
+  testonly: true
+  ourdata:
+    metadata: ${data.metapath}association_test_hard.json
+
+resume: null
+output: ./exps/multi_seed_cl_fixbcb_ep10/test_exoonly_seed2/
+
+continual:
+  checkpoint_dir: ./exps/multi_seed_cl_fixbcb_ep10/train_exoonly_seed2/
+
+

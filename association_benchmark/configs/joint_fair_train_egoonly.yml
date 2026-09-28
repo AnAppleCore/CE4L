@@ -1,0 +1,7 @@
+_base_: './train_egoonly_continual.yml'
+
+# Strictly match continual training hyperparams/data/model.
+# Only override output location for the joint_fair baseline.
+output: ./exps/joint_fair/train_egoonly_seed0/
+
+

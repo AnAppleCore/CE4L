@@ -1,0 +1,6 @@
+_base_: './train_egoexo_continual.yml'
+output: ./exps/continual_derpp_br0p1_rr0p1/train_egoexo/
+continual_algorithm: derpp
+continual_algorithm_buffer_ratio: 0.1
+continual_algorithm_replay_batch_ratio: 0.1
+continual_algorithm_distill_alpha: 0.5

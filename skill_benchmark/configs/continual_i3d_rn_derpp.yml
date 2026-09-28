@@ -1,0 +1,32 @@
+output_root: skill_benchmark/exps/continual_derpp/i3d_rn
+
+# continual settings
+# Match standard RAAN + Relation Network training hyperparams (see scripts/run_raan_rn.sh + opts.py defaults)
+epochs_per_task: 2000
+seed: 0
+randomize_order: true
+num_tasks: null
+
+# data paths (from scripts/run_raan_rn.sh)
+root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_ego_i3d
+exo_root_path: <DATA_ROOT>/EgoExoLearn/skill_benchmark_i3d/release_feature_exo_i3d
+train_list: skill_benchmark/annotations/skill_train.txt
+val_list: skill_benchmark/annotations/skill_val.txt
+
+# runtime knobs (match standard)
+batch_size: 128
+workers: 4
+lr: 0.0001
+num_samples: 20
+
+# RN: ego pairs + exo reference via relation network (RN implies num_samples=20 in standard script)
+use_exo: true
+triplet_loss: false
+relation_network: true
+
+
+continual_algorithm: derpp
+continual_algorithm_buffer_ratio: 0.2
+continual_algorithm_replay_batch_ratio: 0.2
+continual_algorithm_distill_alpha: 0.5
+

@@ -1,0 +1,39 @@
+output_root: temporal_action_segmentation_benchmark/exps/joint_fair/egoexo_ego/seed0
+video_to_task_path: <DATA_ROOT>/video_to_task.npy
+
+path_data: temporal_action_segmentation_benchmark/tas_annotation
+feature_path: <DATA_ROOT>/EgoExoLearn/i3d_rgb_features/
+
+exp_type: ego-exo-cotraining-ego
+eval_split: val
+seed: 0
+
+# joint baseline epochs (Scheme A)
+num_epochs: 150
+
+feat_sample_rate: 1
+label_sample_rate: 1
+all_sample_rate: 5
+features_dim: 1024
+use_target: none
+
+dataset: egobridge
+lr: 0.0005
+DA_adv: none
+DA_adv_video: none
+DA_ent: none
+use_attn: none
+DA_dis: none
+DA_ens: none
+SS_video: none
+method_centroid: none
+use_best_model: none
+num_seg: 1
+beta: [-2.0, -2.0]
+iter_max_beta: [2000, 1400]
+iter_max_gamma: 2000
+iter_max_nu: 37500
+mu: 0.0
+eta: 0.0
+
+

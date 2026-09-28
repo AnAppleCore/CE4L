@@ -1,0 +1,17 @@
+_base_: '../continual_default.yml'
+
+data:
+  dataset: ourdata_exo
+  clip_length: 4
+
+train:
+  batch_size: 32
+  seed: 0
+
+test:
+  testonly: false
+
+resume: <DATA_ROOT>/weights/LaViLA/clip_openai_timesformer_base.narrator_rephraser.ep_0001.md5sum_02dbb9.pth
+output: ./exps/multi_seed_cl/train_exoonly_seed0/
+
+
